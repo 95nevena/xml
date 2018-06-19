@@ -1,0 +1,29 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+		   xmlns:tns="http://com/xml_web_service/bookingapplication/model"
+           targetNamespace="http://com/xml_web_service/bookingapplication/model"
+           elementFormDefault="qualified">
+
+
+	<xs:complexType name="AccomodationCategory">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="category" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:element name="GetAccCategoryResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="AccomodationCategory" type="tns:AccomodationCategory" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+ 	<xs:element name="GetAccCategoryRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
